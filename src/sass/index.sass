@@ -1,0 +1,63 @@
+:root
+  --colour-cream: #E7EFC5
+  --colour-blue: #2F3061
+  --colour-steel-blue: #3F88C5
+  --colour-platinum: #CFCFCF
+  --header-height: 64px
+
+body
+  margin: 0
+  font-family: verdana, helvetica, sans-serif
+  
+header, main, footer
+  box-sizing: border-box
+
+header
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  padding: 0 1rem
+
+  width: 100%
+  height: var(--header-height)
+  background-color: var(--colour-platinum)
+
+  img
+    height: 80%
+
+  h1
+    margin-left: 1rem
+    color: var(--colour-blue)
+
+main
+  margin: 0
+  padding: var(--header-height) 1rem
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  outline: solid 1px red
+  font-size: 2rem
+  color: var(--colour-steel-blue)
+  font-weight: bold
+
+footer
+  position: fixed
+  bottom: 0
+  left: 0
+  margin: 0
+  padding: 1rem
+
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  
+  width: 100%
+  height: var(--header-height)
+  text-align: left
+  color: white
+  background-color: var(--colour-blue)
+
