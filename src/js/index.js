@@ -1,7 +1,7 @@
 // assign a reference to the IPC servive.
 const service = window.go && window.go.IPC.Service;
 if (!service) {
-  throw new Error('IPC Service not available.');
+  displayError('IPC Service not available.');
 }
 
 // container element in which to present content received from the IPC service.
@@ -21,7 +21,7 @@ service.Request(params).then(res => {
     return;
   }
 
-  // determine is the service response has data?
+  // determine if the service response is missing data?
   if (!(res.data && res.data.content)) {
     displayError('Missing content from Service.')
     return;
@@ -31,6 +31,7 @@ service.Request(params).then(res => {
   con.innerText = res.data.content;
 })
 
+// Facilitates showing an error message within the view.
 function displayError(err) {
   (typeof err === 'string') && (con.innerText = err);
 }
