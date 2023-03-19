@@ -1,11 +1,11 @@
+// container element in which to present content received from the IPC service.
+const con = document.querySelector('main');
+
 // assign a reference to the IPC servive.
 const service = window.go && window.go.IPC.Service;
 if (!service) {
   displayError('IPC Service not available.');
 }
-
-// container element in which to present content received from the IPC service.
-const con = document.querySelector('main');
 
 // service request parameters:
 const params = {
@@ -14,7 +14,7 @@ const params = {
 };
 
 // call the IPC service Request method, which returns a Promise:
-service.Request(params).then(res => {
+service && service.Request(params).then(res => {
   // determine that response matches the request params:
   if (res.module !== params.module || res.method !== params.method) {
     displayError('Unexpected Service response!')
